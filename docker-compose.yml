@@ -33,3 +33,4 @@ services:
       - MONGO_URI=mongodb://mongo:27017/flight_tracking_db
     depends_on:
       - mongo
+    
