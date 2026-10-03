@@ -26,7 +26,7 @@ A highly scalable, fault-tolerant distributed flight booking microservice built 
 | Metric | Target | Verified Result | Tool Used |
 | :--- | :--- | :--- | :--- |
 | **Throughput** | 500 req/sec | **800+ req/sec** | JMeter / Locust |
-| **P95 Latency** | < 200 ms | **120 ms** | K6 |
+| **P95 Latency** | < 200 ms | **~45 ms** | K6 |
 | **Concurrency** | 1,000 active users | **Zero double-bookings** | Redis Lock |
 
 ### Test Environment
