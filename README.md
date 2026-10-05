@@ -11,12 +11,23 @@ A highly scalable, fault-tolerant distributed flight booking microservice built 
 
 ### Core Endpoints
 
-| Method | Endpoint | Description | Payload / Query |
+| Method | Endpoint | Description | Payload |
 | :--- | :--- | :--- | :--- |
-| `GET` | `/api/v1/flights/search` | Search available flights | `?from=DEL&to=BOM&date=2026-10-15` |
-| `POST` | `/api/v1/bookings` | Create seat reservation | `{"flightId": "FL123", "seats": [12A, 12B]}` |
-| `GET` | `/api/v1/bookings/{id}` | Get booking status | Path variable `{id}` |
+| `POST` | `/api/bookings` | Create a booking | `{"flightNumber":"AI101","passengerName":"Srajan","seatNumber":"12A","status":"CONFIRMED"}` |
+| `GET` | `/api/bookings/{id}` | Get a booking | Path variable `{id}` |
+| `DELETE` | `/api/bookings/{id}` | Delete a booking | Path variable `{id}` | 
 
+## Getting Started
+
+Prerequisites: JDK 17, Docker Desktop
+
+```bash
+docker compose up -d
+cd booking-service
+./gradlew bootRun
+```
+
+API runs at `http://localhost:8080`.
 ---
 
 ## Benchmark & Load Testing Proof
