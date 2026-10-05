@@ -1,11 +1,12 @@
 # Distributed Flight Booking System
 
-A highly scalable, fault-tolerant distributed flight booking microservice built with Kotlin and Spring Boot. Designed to handle high-concurrency seat reservation workloads with distributed locking.
+A flight booking REST API built with Kotlin and Spring Boot, backed by PostgreSQL and containerized with Docker Compose.
 
 ## Key Features & Metrics
-- **High Throughput:** Verified benchmark of **800+ req/sec** under peak load testing.
-- **Concurrency Control:** Prevents double-booking using Redis distributed locks / optimistic locking.
-- **Architecture:** Microservices-based design for search, booking, and payment processing.
+- **Load tested:** ~1,460 req/s on `POST /api/bookings` (local, 50 concurrent users), p95 74 ms, 0% errors
+- **Stack:** Kotlin, Spring Boot, PostgreSQL, Docker Compose, GitHub Actions CI
+- **Note:** Redis and MongoDB are provisioned in Docker Compose; booking-service currently uses PostgreSQL only
+
 
 ## Architecture & Endpoints
 
