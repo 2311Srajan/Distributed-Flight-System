@@ -1,0 +1,5 @@
+*.log
+boot-error.txt
+hs_err_pid*
+build/
+.gradle/

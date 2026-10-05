@@ -6,9 +6,8 @@ import org.springframework.cache.annotation.EnableCaching
 
 @SpringBootApplication
 @EnableCaching
-class BookingApplication 
+class BookingApplication
 
 fun main(args: Array<String>) {
     runApplication<BookingApplication>(*args)
-
-    
+}

@@ -1,9 +1,9 @@
 spring:
   datasource:
-    url: jdbc:(postgresql)://localhost:5432/flight_booking_db
+    url: "jdbc:postgresql://localhost:5432/flight_booking_db"
     username: postgres
-    password: postgrespassword
-    driver-class-name: org.postgresql.Driver
+    password: password
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -11,6 +11,7 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+
   data:
     redis:
       host: localhost
