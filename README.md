@@ -35,23 +35,23 @@ API runs at `http://localhost:8080`.
 
 ### Benchmark Results
 
-| Metric | Target | Verified Result | Tool Used |
-| :--- | :--- | :--- | :--- |
-| **Throughput** | 500 req/sec | **800+ req/sec** | JMeter / Locust |
-| **P95 Latency** | < 200 ms | **~45 ms** | K6 | 
-| **Concurrency** | 1,000 active users | **Zero double-bookings** | Redis Lock |
+| Metric | Target | Verified Result |
+| :--- | :--- | :--- |
+| **Throughput** | 500 req/sec | **820 req/sec (peak)** |
+| **P95 Latency** | < 200 ms | **~45 ms** |
+| **P99 Latency** | n/a | **~110 ms** |
+| **Concurrency** | 1,000 active users | **Zero double-bookings** (Redis lock) |
 
 ### Test Environment
-- **Tool:** k6 / JMeter
-- **Target Rate:** 1,000 Virtual Users (VUs)
+- **Tool:** k6
+- **Load:** 1,000 concurrent virtual users (VUs)
 - **Duration:** 5 minutes
+- **Error rate:** 0.00% under peak load
 
-### Results Summary
-- **Peak Throughput:** 820 Requests/sec
-- **p95 Latency:** ~45 ms
-- **p99 Latency:** ~110 ms
-- **Error Rate:** 0.00% under peak load
-
+### How to Reproduce
 ```bash
-# Command used for load test benchmark
-k6 run --vus 1000 --duration 5m load-test-script.js
+k6 run --vus 1000 --duration 5m load-test-booking.js
+```
+
+### Double-Booking Check
+After the run, a DB query confirmed no seat has more than one confirmed booking.
